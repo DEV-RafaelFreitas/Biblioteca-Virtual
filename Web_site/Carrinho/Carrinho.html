@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/Web_site/Style/carrinho.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Biblioteca Virtual</div>
+        <nav>
+            <a href="/Web_site/Home/home.html">Início</a>
+            <a href="/Web_site/Catalogo/catalogo.html">Catálogo</a>
+            <a href="/Web_site/Carrinho/carrinho.html">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>   
+            <h1>Meu Carrinho</h1>
+            <p>Confira os livros que você escolheu antes de finalizar.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livro</th>
+                        <th>Autor</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="itens">
+                    <tr data-preco="39.90">
+                        <td>Dom Casmurro</td>
+                        <td>Machado de Assis</td>
+                        <td>R$ 39,90</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td class="subtotal">R$ 39,90</td>
+                        <td><button class="remover">Remover</button></td>
+                    </tr>
+                    <tr data-preco="29.90">
+                        <td>O Cortiço</td>
+                        <td>Aluísio Azevedo</td>
+                        <td>R$ 29,90</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td class="subtotal">R$ 29,90</td>
+                        <td><button class="remover">Remover</button></td>
+                    </tr>
+                    <tr data-preco="54.90">
+                        <td>Duna</td>
+                        <td>Frank Herbert</td>
+                        <td>R$ 54,90</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td class="subtotal">R$ 54,90</td>
+                        <td><button class="remover">Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p id="vazio" style="display: none;">Seu carrinho está vazio.</p>
+
+            <h2 class="total" id="total">Total: R$ 124,70</h2>
+
+            <button>Finalizar compra</button>
+            <a href="/Web_site/Catalogo/catalogo.html"><button class="secundario">Continuar comprando</button></a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Biblioteca Virtual</p>
+    </footer>
+
+</body>
+
+</html>

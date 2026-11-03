@@ -1,0 +1,114 @@
+/* ===== Estilo geral ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ===== Cabeçalho e menu ===== */
+header {
+  background-color: #1f3a5f;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Conteúdo ===== */
+main {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: #1f3a5f;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+/* ===== Formulário ===== */
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+/* ===== Botões ===== */
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #1f3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2f5a94;
+}
+
+button.secundario {
+  background-color: #777;
+}
+
+button.secundario:hover {
+  background-color: #555;
+}
+
+/* ===== Área de cadastro ===== */
+.cadastro {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}

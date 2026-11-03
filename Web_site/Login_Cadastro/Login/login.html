@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/Web_site/Style/Login.css" type="text/css">
 </head>
 <body>
-    <h2>Em desenvolvimento</h2>
+    <header>
+        <div class="logo">Biblioteca Virtual</div>
+        <nav>
+            <a href="/Web_site/Home/home.html">Início</a>
+            <a href="/Web_site/Catalogo/catalogo.html">Catálogo</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Login</h1>
+            <p>Entre com seu e-mail e sua senha para acessar a biblioteca.</p>
+
+            <form>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <div class="cadastro">
+                <p>Ainda não tem conta?</p>
+                <a href="/Web_site/Login_Cadastro/Cadastro/cadastro_cliente.html"><button class="secundario">Cadastre-se</button></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Biblioteca Virtual</p>
+    </footer>
 </body>
 </html>
