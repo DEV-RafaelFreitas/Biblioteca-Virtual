@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/Style/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Biblioteca Virtual</div>
+        <nav>
+            <a href="/Home/home.html">Início</a>
+            <a href="/Catalogo/catalogo.html">Catálogo</a>
+            <a href="cadastrar-livro.html">Cadastrar livro</a>
+            <a href="/Login_Cadastro/Login/login.html">Login</a>
+            <a href="/Login_Cadastro/Cadastro/cadastro_cliente.html">Cadastre-se</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h1>Cadastro de cliente</h1>
+    
+            <form id="form-cadastro">
+    
+                <!-- Dados pessoais -->
+                <h2>Dados pessoais</h2>
+    
+                <label for="cad-nome">Nome completo</label>
+                <input type="text" id="cad-nome" placeholder="Digite seu nome completo" required>
+    
+                <div class="linha">
+                    <div>
+                        <label for="cad-cpf">CPF</label>
+                        <input type="text" id="cad-cpf" placeholder="000.000.000-00" maxlength="14" required>
+                    </div>
+                    <div>
+                        <label for="cad-nascimento">Data de nascimento</label>
+                        <input type="date" id="cad-nascimento" required>
+                    </div>
+                </div>
+    
+                <label for="cad-genero">Gênero</label>
+                <select id="cad-genero">
+                    <option value="">Prefiro não informar</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+    
+                <!-- Contato -->
+                <h2>Contato</h2>
+    
+                <div class="linha">
+                    <div>
+                        <label for="cad-email">E-mail</label>
+                        <input type="email" id="cad-email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div>
+                        <label for="cad-telefone">Telefone</label>
+                        <input type="tel" id="cad-telefone" placeholder="(11) 99999-9999" maxlength="15" required>
+                    </div>
+                </div>
+    
+                <!-- Endereço -->
+                <h2>Endereço</h2>
+    
+                <div class="linha">
+                    <div>
+                        <label for="cad-cep">CEP</label>
+                        <input type="text" id="cad-cep" placeholder="00000-000" maxlength="9" required>
+                    </div>
+                    <div>
+                        <label for="cad-estado">Estado</label>
+                        <select id="cad-estado" required>
+                            <option value="">Selecione</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <label for="cad-rua">Rua</label>
+                <input type="text" id="cad-rua" placeholder="Nome da rua" required>
+    
+                <div class="linha">
+                    <div>
+                        <label for="cad-numero">Número</label>
+                        <input type="text" id="cad-numero" required>
+                    </div>
+                    <div>
+                        <label for="cad-complemento">Complemento</label>
+                        <input type="text" id="cad-complemento" placeholder="Apto, bloco... (opcional)">
+                    </div>
+                </div>
+    
+                <div class="linha">
+                    <div>
+                        <label for="cad-bairro">Bairro</label>
+                        <input type="text" id="cad-bairro" required>
+                    </div>
+                    <div>
+                        <label for="cad-cidade">Cidade</label>
+                        <input type="text" id="cad-cidade" required>
+                    </div>
+                </div>
+    
+                <!-- Acesso -->
+                <h2>Dados de acesso</h2>
+    
+                <div class="linha">
+                    <div>
+                        <label for="cad-senha">Senha</label>
+                        <input type="password" id="cad-senha" minlength="6" placeholder="Mínimo de 6 caracteres" required>
+                    </div>
+                    <div>
+                        <label for="cad-confirmar-senha">Confirmar senha</label>
+                        <input type="password" id="cad-confirmar-senha" minlength="6" placeholder="Repita a senha" required>
+                    </div>
+                </div>
+    
+                <label class="checkbox">
+                    <input type="checkbox" id="cad-termos" required>
+                    Li e aceito os termos de uso
+                </label>
+    
+                <button type="submit">Criar conta</button>
+                <button type="reset" class="secundario">Limpar</button>
+            </form>
+    
+            <!-- Mensagens de erro ou sucesso (preenchidas via JavaScript) -->
+            <p id="mensagem-cadastro"></p>
+    
+            <p class="link-alternativo">Já tem conta? <a href="/Login_Cadastro/Login/login.html">Faça login</a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Biblioteca Virtual - Trabalho PW1</p>
+    </footer>
+</body>
+</html>
