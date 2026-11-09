@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/Style/style.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Biblioteca Virtual</div>
+            <nav>
+            <a href="/Home/home.html">Início</a>
+            <a href="/Catalogo/catalogo.html">Catálogo</a>
+            <a href="/Cadastrar_Livro/cadastro_livro.html">Cadastrar livro</a>
+            <a href="/Relatorio/relatorio.html">Relatório</a>
+            <a href="/Carrinho/Carrinho.html">Carrinho</a>
+            <a href="/Login_Cadastro/Login/login.html">Login</a>
+            <a href="/Login_Cadastro/Cadastro/cadastro_cliente.html">Cadastre-se</a>
+        </nav>
+    </header>
+
+        <main>
+        <section>
+            <h1>Meu Carrinho</h1>
+            <p>Confira os livros que você escolheu antes de finalizar.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livro</th>
+                        <th>Autor</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="itens"></tbody>
+            </table>
+
+            <p id="vazio" style="display: none;">Seu carrinho está vazio.</p>
+
+            <h2 class="total" id="total">Total: R$ 0,00</h2>
+
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+            <button class="secundario" onclick="location.href='/Catalogo/catalogo.html'">Continuar comprando</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Biblioteca Virtual</p>
+    </footer>
+
+    <script src="/JavaScript/script.js"></script>
+</body>
+
+</html>
