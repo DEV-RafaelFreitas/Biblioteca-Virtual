@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+    <link rel="stylesheet" href="/Biblioteca-Virtual/Web_site/Style/style.css" type="text/css">
+</head>
+<body>
+
+     <header>
+        <div class="logo">Biblioteca Virtual</div>
+        <nav>
+            <a href="/Biblioteca-Virtual/Web_site/Home/home.html">Início</a>
+            <a href="/Biblioteca-Virtual/Web_site/Catalogo/catalogo.html">Catálogo</a>
+            <a href="/Biblioteca-Virtual/Web_site/Login_Cadastro/Login/login.html">Login</a>
+            <a href="/Biblioteca-Virtual/Web_site/Login_Cadastro/Cadastro/cadastro_cliente.html">Cadastre-se</a>
+        </nav>
+    </header>
+
+    <h1>Cadastro de Livros</h1>
+
+    <form action="#" method="post">
+        
+        <!-- Título do Livro -->
+        <div>
+            <label for="titulo">Título do Livro:</label><br>
+            <input type="text" id="titulo" name="titulo" required placeholder="Ex: O Senhor dos Anéis">
+        </div>
+        <br>
+
+        <!-- Autor -->
+        <div>
+            <label for="autor">Autor:</label><br>
+            <input type="text" id="autor" name="autor" required placeholder="Ex: J.R.R. Tolkien">
+        </div>
+        <br>
+
+        <!-- Editora -->
+        <div>
+            <label for="editora">Editora:</label><br>
+            <input type="text" id="editora" name="editora" placeholder="Ex: HarperCollins">
+        </div>
+        <br>
+
+        <!-- Ano de Publicação -->
+        <div>
+            <label for="ano">Ano de Publicação:</label><br>
+            <input type="number" id="ano" name="ano" min="1000" max="2099" placeholder="Ex: 1954">
+        </div>
+        <br>
+
+        <!-- Número de Páginas -->
+        <div>
+            <label for="paginas">Número de Páginas:</label><br>
+            <input type="number" id="paginas" name="paginas" min="1" placeholder="Ex: 576">
+        </div>
+        <br>
+
+        <!-- ISBN -->
+        <div>
+            <label for="isbn">ISBN:</label><br>
+            <input type="text" id="isbn" name="isbn" placeholder="Ex: 978-8533613379">
+        </div>
+        <br>
+
+        <!-- Gênero -->
+        <div>
+            <label for="genero">Gênero:</label><br>
+            <select id="genero" name="genero" required>
+                <option value="" disabled selected>Selecione um gênero</option>
+                <option value="fantasia">Fantasia</option>
+                <option value="ficcao_cientifica">Ficção Científica</option>
+                <option value="romance">Romance</option>
+                <option value="suspense">Suspense / Thriller</option>
+                <option value="biografia">Biografia</option>
+                <option value="historia">História</option>
+                <option value="outros">Outros</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Status de Leitura -->
+        <fieldset>
+            <legend>Status de Leitura:</legend>
+
+            <input type="radio" id="status_quero_ler" name="status" value="Quero ler" checked>
+            <label for="status_quero_ler">Quero ler</label><br>
+
+            <input type="radio" id="status_lendo" name="status" value="Lendo">
+            <label for="status_lendo">Lendo</label><br>
+
+            <input type="radio" id="status_lido" name="status" value="Lido">
+            <label for="status_lido">Lido</label>
+        </fieldset>
+        <br>
+
+        <!-- Sinopse -->
+        <div>
+            <label for="sinopse">Sinopse:</label><br>
+            <textarea id="sinopse" name="sinopse" rows="5" cols="40" placeholder="Escreva o resumo do livro..."></textarea>
+        </div>
+        <br>
+
+        <!-- Botão de Enviar -->
+        <button type="submit">Cadastrar Livro</button>
+
+    </form>
+
+     <footer>
+        <p>Biblioteca Virtual</p>
+    </footer>
+    
+</body>
+</html>
