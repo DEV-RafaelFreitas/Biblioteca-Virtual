@@ -357,9 +357,120 @@ function finalizarCompra(){
     mostrarCarrinho();
 }
 
+// cadastro de livro: só entra quem está logado; guarda o livro na lista "livros"
+function configurarCadastroLivro(){
+
+    const form = document.getElementById("form-livro");
+
+    if(form === null){
+        return;
+    }
+
+    // só deixa usar a página se tiver alguém logado
+    if(localStorage.getItem("usuarioLogado") === null){
+
+        alert("Faça login para cadastrar livros.");
+        window.location.href = "/Login_Cadastro/Login/login.html";
+        return;
+
+    }
+
+    form.addEventListener("submit", function(evento){
+        evento.preventDefault();
+
+        const titulo = document.getElementById("livro-titulo").value.trim();
+        const autor = document.getElementById("livro-autor").value.trim();
+        const ano = parseInt(document.getElementById("livro-ano").value);
+        const preco = parseFloat(document.getElementById("livro-preco").value);
+        const genero = document.getElementById("livro-genero").value;
+        const imagem = document.getElementById("livro-imagem").value.trim();
+
+        const livros = lerLista("livros");
+
+        // não deixa cadastrar o mesmo título duas vezes
+        if(livros.some((l) => l.titulo.toLowerCase() === titulo.toLowerCase())){
+            mostrarMensagem("mensagem-livro", "Este livro já está cadastrado.", "erro");
+            return;
+        }
+
+        // gera o id: o maior id que existe + 1
+        const ids = livros.map((l) => l.id);
+
+        let maiorId = 0;
+        ids.forEach(function(id){
+            if(id > maiorId){
+            maiorId = id;
+            }
+        });
+
+        const novoId = maiorId + 1;
+
+        livros.push({
+            id: novoId,
+            titulo: titulo,
+            autor: autor,
+            ano: ano,
+            genero: genero,
+            preco: preco,
+            imagem: imagem
+        });
+
+        salvarLista("livros", livros);
+
+        form.reset();
+        mostrarMensagem("mensagem-livro", "Livro cadastrado! Indo para o catálogo...", "sucesso");
+
+        setTimeout(function(){
+            window.location.href = "/Catalogo/catalogo.html";
+        }, 1500);
+    });
+}
+
+// mostra todos os livros cadastrados em uma tabela
+function mostrarRelatorio(){
+    const corpo = document.getElementById("lista-relatorio");
+    if(corpo === null){
+        return;
+    }
+
+    // só deixa ver o relatório se tiver alguém logado
+    if(localStorage.getItem("usuarioLogado") === null){
+        alert("Faça login para ver o relatório.");
+        window.location.href = "/Login_Cadastro/Login/login.html";
+        return;
+    }
+
+    const livros = lerLista("livros");
+    corpo.innerHTML = ""; // limpa as linhas antigas
+
+    livros.forEach(function(livro){
+        const linha = document.createElement("tr");
+        linha.appendChild(criarCelula(livro.id));
+        linha.appendChild(criarCelula(livro.titulo));
+        linha.appendChild(criarCelula(livro.autor));
+        linha.appendChild(criarCelula(livro.ano));
+        linha.appendChild(criarCelula(livro.genero));
+        linha.appendChild(criarCelula(formatarPreco(livro.preco)));
+        corpo.appendChild(linha);
+    });
+
+    // se a lista estiver vazia, esconde a tabela e mostra o aviso
+    const tabela = document.getElementById("tabela-relatorio");
+    const vazio = document.getElementById("vazio-relatorio");
+    if(livros.length === 0){
+        tabela.style.display = "none";
+        vazio.style.display = "block";
+    } else {
+        tabela.style.display = "";
+        vazio.style.display = "none";
+    }
+}
+
 livrosIncial();
 atualizarMenu();
 mostrarCatalogo();
 configurarCadastro();
 configurarLogin();
 mostrarCarrinho();
+configurarCadastroLivro();
+mostrarRelatorio();

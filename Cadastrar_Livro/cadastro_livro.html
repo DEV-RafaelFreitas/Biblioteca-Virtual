@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Virtual</title>
+    <title>Cadastrar Livro - Biblioteca Virtual</title>
     <link rel="stylesheet" href="/Style/style.css">
 </head>
+
 <body>
     <header>
         <div class="logo">Biblioteca Virtual</div>
-            <nav>
+        <nav>
             <a href="/Home/home.html">Início</a>
             <a href="/Catalogo/catalogo.html">Catálogo</a>
             <a href="/Cadastrar_Livro/cadastro_livro.html">Cadastrar livro</a>
@@ -22,18 +24,55 @@
 
     <main>
         <section>
-            <h1>Cadastrar livro</h1>
-            <p>Em desenvolvimento...</p>
+            <h1>Cadastro de Livros</h1>
+            <p>Preencha os dados para adicionar um livro ao catálogo.</p>
+
+            <form id="form-livro">
+                <label for="livro-titulo">Título do livro</label>
+                <input type="text" id="livro-titulo" name="titulo" placeholder="Ex: O Senhor dos Anéis" required>
+
+                <label for="livro-autor">Autor</label>
+                <input type="text" id="livro-autor" name="autor" placeholder="Ex: J.R.R. Tolkien" required>
+
+                <div class="linha">
+                    <div>
+                        <label for="livro-ano">Ano de publicação</label>
+                        <input type="number" id="livro-ano" name="ano" min="1000" max="2099" placeholder="Ex: 1954" required>
+                    </div>
+                    <div>
+                        <label for="livro-preco">Preço (R$)</label>
+                        <input type="number" id="livro-preco" name="preco" min="0" step="0.01" placeholder="Ex: 49.90" required>
+                    </div>
+                </div>
+
+                <label for="livro-genero">Gênero</label>
+                <select id="livro-genero" name="genero" required>
+                    <option value="" disabled selected>Selecione um gênero</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Ficção">Ficção</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Biografia">Biografia</option>
+                    <option value="História">História</option>
+                    <option value="Outros">Outros</option>
+                </select>
+
+                <label for="livro-imagem">Capa (caminho da imagem)</label>
+                <input type="text" id="livro-imagem" name="imagem" placeholder="Ex: /Image/Nome do livro.jpg">
+
+                <p id="mensagem-livro"></p>
+
+                <button type="submit">Cadastrar livro</button>
+                <button type="reset" class="secundario">Limpar</button>
+            </form>
         </section>
     </main>
-
-
-
-
 
     <footer>
         <p>Biblioteca Virtual</p>
     </footer>
+
     <script src="/JavaScript/script.js"></script>
 </body>
+
 </html>
