@@ -1,4 +1,4 @@
-/* ===== Estilo geral ===== */
+/*Estilo geral*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,7 @@ body {
   line-height: 1.5;
 }
 
-/* ===== Cabeçalho e menu ===== */
+/*Cabeçalho e menu*/
 header {
   background-color: #1f3a5f;
   color: #fff;
@@ -38,7 +38,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ===== Conteúdo ===== */
+/*Conteúdo*/
 main {
   max-width: 900px;
   margin: 30px auto;
@@ -65,7 +65,7 @@ section {
   border-radius: 6px;
 }
 
-/* ===== Formulários ===== */
+/*Formulários*/
 form label {
   display: block;
   margin-top: 10px;
@@ -101,7 +101,7 @@ button.remover {
   background-color: #b33a3a;
 }
 
-/* ===== Lista de livros (cards) ===== */
+/*Lista de livros (cards)*/
 .lista-livros {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -115,7 +115,7 @@ button.remover {
   padding: 15px;
 }
 
-/* efeito de relevo: o card sobe e ganha sombra */
+/*Efeito de relevo: o card sobe e ganha sombra*/
 .livro:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -125,7 +125,7 @@ button.remover {
   margin-bottom: 5px;
 }
 
-/* imagem dentro de cada livro */
+/*Imagem dentro de cada livro */
 .livro img {
   width: 100%;
   height: 250px;
@@ -134,7 +134,7 @@ button.remover {
 }
 
 
-/* ===== Tabela do relatório ===== */
+/*Tabela do relatório*/
 table {
   width: 100%;
   border-collapse: collapse;
@@ -152,14 +152,14 @@ th {
   color: #fff;
 }
 
-/* ===== Rodapé ===== */
+/*Rodapé*/
 footer {
   text-align: center;
   padding: 20px;
   color: #777;
 }
 
-/* ===== Cadastro de cliente ===== */
+/*Cadastro de cliente*/
 form h2 {
   margin-top: 25px;
   padding-bottom: 5px;
@@ -167,14 +167,14 @@ form h2 {
   color: #1f3a5f;
 }
 
-/* duas colunas lado a lado */
+/*Duas colunas lado a lado*/
 .linha {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* checkbox dos termos */
+/*Checkbox dos termos*/
 form label.checkbox {
   display: flex;
   align-items: center;
@@ -188,7 +188,7 @@ form label.checkbox input {
   margin-top: 0;
 }
 
-/* botão cinza (Limpar) */
+/*Botão cinza (Limpar)*/
 button.secundario {
   background-color: #777;
   margin-left: 10px;
@@ -198,7 +198,7 @@ button.secundario:hover {
   background-color: #555;
 }
 
-/* link "Já tem conta?" / "Não tem conta?" */
+/*Link "Já tem conta?" / "Não tem conta?"*/
 .link-alternativo {
   margin-top: 20px;
   text-align: center;
